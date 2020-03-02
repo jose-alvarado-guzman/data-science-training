@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  dstoolbox:
+      image: josealvaradoguzman/data-science-toolbox
+      networks:
+          - net
+      ports:
+          - 8887:8888
+
+networks:
+  net:
