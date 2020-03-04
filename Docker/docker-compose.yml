@@ -8,6 +8,14 @@ services:
           - net
       ports:
           - 8887:8888
+    
+  neo4j:
+      image: josealvaradoguzman/neo4j-graph-datascience
+      networks:
+          - net
+      ports:
+          - 7473:7474
+          - 7686:7687   
 
 networks:
   net:
