@@ -16,6 +16,12 @@ services:
       ports:
           - 7473:7474
           - 7686:7687   
-
+  data:
+    image: josealvaradoguzman/paysim-dataset
+    volumes:
+          - paysim-data:/data
 networks:
   net:
+
+volumes:
+  paysim-data:
