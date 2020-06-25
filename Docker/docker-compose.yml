@@ -3,25 +3,27 @@ version: '3'
 services:
 
   dstoolbox:
-      image: josealvaradoguzman/data-science-toolbox
-      networks:
-          - net
-      ports:
-          - 8887:8888
+    image: josealvaradoguzman/data-science-toolbox
+    networks:
+        - net
+    ports:
+        - 8887:8888
+    links:
+        - neo4j:neo4jdb
     
   neo4j:
-      image: josealvaradoguzman/neo4j-graph-datascience
-      networks:
-          - net
-      ports:
-          - 7473:7474
-          - 7686:7687   
+    image: josealvaradoguzman/neo4j-graph-datascience
+    networks:
+        - net
+    ports:
+        - 7473:7474
+        - 7686:7687   
   data:
-    image: josealvaradoguzman/paysim-dataset
+    image: josealvaradoguzman/data-science-bootcamp-data
     volumes:
-          - paysim-data:/data
+        - ds-bootcamp-data:/data
 networks:
   net:
 
 volumes:
-  paysim-data:
+  ds-bootcamp-data:
