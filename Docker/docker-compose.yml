@@ -18,6 +18,9 @@ services:
     ports:
         - 7473:7474
         - 7686:7687   
+    volumes:
+        - ds-bootcamp-data:/data/databases
+       
   data:
     image: josealvaradoguzman/data-science-bootcamp-data
     volumes:
