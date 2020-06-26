@@ -2,6 +2,11 @@ version: '3'
 
 services:
 
+  data:
+    image: josealvaradoguzman/data-science-bootcamp-data
+    volumes:
+        - ds-bootcamp-data:/data
+
   dstoolbox:
     image: josealvaradoguzman/data-science-toolbox
     networks:
@@ -10,6 +15,8 @@ services:
         - 8887:8888
     links:
         - neo4j:neo4jdb
+    volumes:
+        - ds-bootcamp-data:/data
     
   neo4j:
     image: josealvaradoguzman/neo4j-graph-datascience
@@ -19,12 +26,10 @@ services:
         - 7473:7474
         - 7686:7687   
     volumes:
-        - ds-bootcamp-data:/data/databases
+        - ds-bootcamp-data:/var/lib/neo4j/data
+    depends_on:
+        - data
        
-  data:
-    image: josealvaradoguzman/data-science-bootcamp-data
-    volumes:
-        - ds-bootcamp-data:/data
 networks:
   net:
 
