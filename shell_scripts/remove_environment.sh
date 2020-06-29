@@ -1,4 +1,5 @@
 #!/bin/bash
-cd Docker
+cd ../Docker
 docker-compose stop
 docker-compose rm -v
+docker volume rm ds-bootcamp-data

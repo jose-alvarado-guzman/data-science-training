@@ -1,3 +1,3 @@
 #!/bin/bash
-cd Docker
+cd ../Docker
 docker-compose up -d
