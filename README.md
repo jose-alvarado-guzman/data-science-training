@@ -17,7 +17,7 @@ In order to accomplish our goal, we are going to be setting up a development env
 Bash and Power Shell scripts are provided to start, stop, list and remove all environment containers under the shell_scripts and powershell_scripts directories respectively. To get the environment up and running on your machine execute the start_environment file in the appropriate directory based on your operating system. If you encounter ports conflicts, please modify the port section under the services list in the Docker/docker-compose.yml file with ports not currently in used in your machine.
 
 At this point you should be able to access Jupyter Notebook by accessing on your browser the following URL [http://localhost:8887](http://localhost:8887) (remember to change the port if modified) and by providing the __password DS_Training__. You should also be able to access the Neo4j Browser using the URL [http://localhost:7473](http://localhost:7473) using the same password. Make sure to change the protocol of the URL connection to __bolt__ and the port to __7686__.
-Your Connect to Neo4j frame should look like this:
+Your Connect to Neo4j frame should look like this: ![Connect Neo4j Frame](ConnectNeo4jFrame.png)
 
 Each container in the environment can also be access via terminal by executing the `docker exec` command. For instance, the Data Science Toolbox container can be access by running the following command: `docker exec -it docker_dstoolbox_1 /bin/bash`. 
 
